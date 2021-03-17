@@ -30,6 +30,7 @@ resource "aws_iam_policy" "ab_tag_policy" {
 
   count       = var.enabled ? 1 : 0
   description = "AWS Backup Tag policy"
+  name        = "aws-backup-plan-${var.plan_name}-policy"
 
   policy = <<EOF
 {
